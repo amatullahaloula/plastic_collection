@@ -1,0 +1,40 @@
+/* css/style.css */
+/* Ashesi inspired colours: burgundy / cream */
+:root{
+  --bg: #fffaf9;
+  --card: #ffffff;
+  --accent: #f6f6f6; /* deep burgundy */
+  --accent-dark: #5a0016;
+  --muted: #666;
+  --success: #2d7a2d;
+}
+
+*{box-sizing:border-box;font-family: Arial, Helvetica, sans-serif;}
+body{margin:0;background:var(--bg);color:#222;}
+.top{background:var(--accent);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
+.container{max-width:980px;margin:24px auto;padding:25px;}
+.center{display:flex;align-items:center;justify-content:center;height:100vh;}
+.card{background:var(--card);border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+h2,h3{color:var(--accent-dark);margin:0 0 12px 0;}
+label{display:block;margin-top:8px;font-size:14px;color:var(--muted);}
+input[type="text"],input[type="email"],input[type="password"],input[type="number"],textarea,select{
+  width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;margin-top:6px;
+}
+textarea{min-height:80px;}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer;margin-top:12px;}
+.btn.small{padding:6px 8px;font-size:13px;}
+.row{display:flex;gap:12px;align-items:center;}
+.row.between{display:flex;justify-content:space-between;align-items:center;}
+.row.space{display:flex;justify-content:space-between;padding:6px 0;}
+.msg{margin-top:8px;font-size:14px;}
+.msg.error{color:#c0392b;}
+.item{padding:8px;border-bottom:1px solid #f0f0f0;}
+a{color:var(--accent-dark);text-decoration:none;}
+/* form layout tweaks for register */
+.form-container { width: 520px; max-width:95%; padding:22px; }
+.two-cols { display:flex; gap:12px; }
+.two-cols > div { flex:1; }
+input, select, textarea { font-size:15px; padding:10px; }
+
+/* message styling */
+.msg.error { color:#c0392b; }

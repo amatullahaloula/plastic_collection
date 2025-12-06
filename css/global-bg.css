@@ -1,0 +1,24 @@
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover smooth effect for cards, buttons, etc */
+.smooth-hover {
+    transition: 0.25s ease;
+}
+
+.smooth-hover:hover {
+    transform: scale(1.03);
+}
+
+/* Smooth page transitions */
+* {
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}

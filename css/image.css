@@ -1,0 +1,66 @@
+/* FULL BACKGROUND WITH IMAGE */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/plastic-bg.jpg') center/cover no-repeat;
+    filter: brightness(40%);
+    z-index: -1;
+}
+
+/* GLASS CARD */
+.auth-card {
+    width: 380px;
+    margin: 6% auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-card label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
+    color: #e3e3e3;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.text-small {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.text-small a {
+    color: #ffd700;
+}
