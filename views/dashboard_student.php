@@ -87,11 +87,11 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 <div class="transparent-wrapper">
 
 <header class="top">
-    <div>Ashesi Plastic Student page</div>
+    <div style="color: #3b82f6; text-decoration: none;">Ashesi Plastic Student page</div>
     <div>
-        <a href="/plastic_collection/views/help_center.php" style="color: #f6f6f6; text-decoration: none;">Help Center</a> |
+        <a href="/plastic_collection/views/help_center.php" style="color: #3b82f6; text-decoration: none;">Help Center</a> |
         <?= htmlspecialchars($displayName); ?> |
-        <a href="/plastic_collection/api/logout.php" style="color: #f6f6f6; text-decoration: none;">Logout</a>
+        <a href="/plastic_collection/api/logout.php" style="color: #3b82f6; text-decoration: none;">Logout</a>
     </div>
 </header>
 
