@@ -165,11 +165,11 @@ $user_role = $_SESSION['user']['role'] ?? '';
 <div class="transparent-wrapper">
     <div class="container">
 
-        <h1 class="title">♻️ Help Center</h1>
+        <h1 class="title"> Help Center</h1>
         <p class="subtitle">Find answers, contact support and learn how recycling works.</p>
 
         <div class="card">
-            <h2>Frequently Asked Questions 🤔</h2>
+            <h2>Frequently Asked Questions </h2>
 
             <div class="collapse">
                 <button class="collapse-btn">• How do I earn rewards? (Tap to expand)</button>
@@ -202,21 +202,11 @@ $user_role = $_SESSION['user']['role'] ?? '';
         </div>
 
 
-        <div class="card">
-            <h2>Recycling Rules 📋</h2>
-
-            <ul class="rules">
-                <li>Only **plastic bottles** (PET) are accepted.</li>
-                <li>Bottles must be **empty** and relatively clean (no liquids or food residue).</li>
-                <li>**Do not** include cans, paper, food waste, or metals.</li>
-                <li>Submit a request **before** placing your plastics at the collection point.</li>
-                <li>Do not leave plastics in corridors or common areas for extended periods.</li>
-            </ul>
-        </div>
+       
 
 
         <div class="card">
-            <h2>Contact Support 📞</h2>
+            <h2>Contact Support </h2>
 
             <p><strong>Email:</strong> ashesi-recycling@support.com</p>
             <p><strong>Phone:</strong> +233 55 123 4567</p>
@@ -225,7 +215,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 
         <div class="card">
-            <h2>Send us a message 📩</h2>
+            <h2>Send us a message </h2>
             <form id="supportForm" action="/plastic_collection/api/send_support.php" method="POST">
                 
                 <label for="supportEmail">Your Email</label>

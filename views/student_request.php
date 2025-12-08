@@ -53,7 +53,7 @@ button:hover { background:#224c87; }
 <a href="/plastic_collection/views/dashboard_student.php" class="btn-back">⬅ Back</a>
 
 <div class="card">
-    <h2 class="section-title">Submit Plastic Collection Request 🧴</h2>
+    <h2 class="section-title">Submit Plastic Collection Request </h2>
 
 <form id="requestForm">
     <div class="form-grid">

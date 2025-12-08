@@ -45,7 +45,7 @@ h2 {
 <div class="overlay">
 
 <header>
-    <div>📦 My Collection History</div>
+    <div> My Collection History</div>
     <div>
         <?php echo $user['nickname']; ?> |
         <a href="/plastic_collection/api/logout.php">Logout</a>

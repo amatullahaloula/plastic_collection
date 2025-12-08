@@ -95,7 +95,7 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 </header>
 
 <main class="container">
-    <h2 class="section-title">♻️ Recycling Rules</h2>
+    <h2 class="section-title"> Recycling Rules</h2>
 
     <p style="margin-bottom:20px;color:#444;">
         Please follow these rules to ensure safe and clean recycling on campus:
@@ -103,42 +103,42 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 
     <!-- RULE 1 -->
     <div class="rule">
-        <div class="rule-icon">🧴</div>
+        <div class="rule-icon"></div>
         <div><strong>1. Only plastic bottles are accepted.</strong><br>
         Other plastic materials (bags, cups, wrappers) are not allowed.</div>
     </div>
 
     <!-- RULE 2 -->
     <div class="rule">
-        <div class="rule-icon">🚿</div>
+        <div class="rule-icon"></div>
         <div><strong>2. Bottles must be empty and rinsed.</strong><br>
         No liquid, no food waste inside.</div>
     </div>
 
     <!-- RULE 3 -->
     <div class="rule">
-        <div class="rule-icon">⚖️</div>
+        <div class="rule-icon"></div>
         <div><strong>3. Do not crush bottles too much.</strong><br>
         Slightly press them but keep the shape visible for counting.</div>
     </div>
 
     <!-- RULE 4 -->
     <div class="rule">
-        <div class="rule-icon">🔄</div>
+        <div class="rule-icon"></div>
         <div><strong>4. Only Ashesi campus collection points are valid.</strong><br>
         Submit requests only from approved locations.</div>
     </div>
 
     <!-- RULE 5 -->
     <div class="rule">
-        <div class="rule-icon">🕒</div>
+        <div class="rule-icon"></div>
         <div><strong>5. Collection time must be respected.</strong><br>
         The cleaner team collects bottles during working hours.</div>
     </div>
 
     <!-- RULE 6 -->
     <div class="rule">
-        <div class="rule-icon">📦</div>
+        <div class="rule-icon"></div>
         <div><strong>6. Keep bottles in a clean bag or container.</strong><br>
         Do not leave bottles on the ground.</div>
     </div>
