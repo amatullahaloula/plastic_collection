@@ -281,7 +281,7 @@ document.getElementById('regForm').addEventListener('submit', async function(e){
     }
 
     try {
-        const res = await fetch('/plastic_collection/api/register.php', {
+        const res = await fetch('../api/register.php', {
             method: 'POST',
             body: form
         });
