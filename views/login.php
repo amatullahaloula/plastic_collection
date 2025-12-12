@@ -146,7 +146,7 @@ if (isset($_SESSION['user'])) {
                 <label for="remember">
                     <input type="checkbox" id="remember" name="remember"> Remember me
                 </label>
-                <a href="/plastic_collection/views/register.php" class="link">Sign up</a>
+                <a href="./register.php" class="link">Sign up</a>
             </div>
 
             <button type="submit" class="btn">Login</button>
