@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Inscription - Ashesi Plastic</title>
     
-    <link rel="stylesheet" href="/plastic_collection/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 

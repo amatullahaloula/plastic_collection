@@ -572,7 +572,7 @@ button:hover {
                 </select>
                 <input type="text" name="student" placeholder="Student name" value="<?= h($studentFilter) ?>">
                 <button type="submit">Filter</button>
-                <a href="/plastic_collection/views/dashboard_admin.php" class="reset-btn">Reset</a>
+                <a href="./dashboard_admin.php" class="reset-btn">Reset</a>
             </form>
         </section>
 

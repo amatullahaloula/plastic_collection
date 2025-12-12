@@ -10,7 +10,7 @@ function require_login() {
         attempt_remember_login();
     }
     if (!isset($_SESSION['user'])) {
-        header("Location: /plastic_collection/views/login.php");
+        header("Location: ../views/login.php");
         exit;
     }
 }
