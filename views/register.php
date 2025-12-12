@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['user'])) {
     // Si déjà connecté : redirection par rôle
     $role = $_SESSION['user']['role'] ?? 'student';
-    header("Location: /plastic_collection/views/dashboard_{$role}.php");
+    header("Location: ./dashboard_{$role}.php");
     exit;
 }
 ?>
@@ -296,7 +296,7 @@ document.getElementById('regForm').addEventListener('submit', async function(e){
         if (j.success) {
             msgEl.textContent = 'Compte créé avec succès. Redirection vers la page de connexion...';
             // Redirection vers la page de connexion
-            setTimeout(()=> window.location.href = '/plastic_collection/views/login.php', 900);
+            setTimeout(()=> window.location.href = './login.php', 900);
         } else {
             msgEl.textContent = j.error || 'Erreur serveur. Échec de la création du compte.';
             msgEl.classList.add('error');
