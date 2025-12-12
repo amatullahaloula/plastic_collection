@@ -153,9 +153,9 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 <header style="padding: 10px 20px; text-align: right;">
     <?php if ($is_logged_in): ?>
-        <a href="/plastic_collection/views/dashboard_<?php echo $user_role; ?>.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Back to Dashboard</a>
+        <a href="./dashboard_<?php echo $user_role; ?>.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Back to Dashboard</a>
     <?php else: ?>
-        <a href="/plastic_collection/views/login.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Login</a>
+        <a href="./login.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Login</a>
     <?php endif; ?>
 </header>
 

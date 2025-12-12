@@ -39,7 +39,7 @@ h2 { color: #1b3d6d; margin-bottom: 20px; }
     <div>👤 My Profile</div>
     <div>
         <?php echo $user['nickname']; ?> |
-        <a href="/plastic_collection/api/logout.php">Logout</a>
+        <a href="../api/logout.php">Logout</a>
     </div>
 </header>
 

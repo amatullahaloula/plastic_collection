@@ -89,8 +89,8 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
     <div>Recycling Rules</div>
     <div>
         <?= htmlspecialchars($displayName); ?> |
-        <a href="/plastic_collection/views/dashboard_student.php" style="color:#5a0016; text-decoration:none;">Dashboard</a> |
-        <a href="/plastic_collection/api/logout.php" style="color:#5a0016; text-decoration:none;">Logout</a>
+        <a href="./dashboard_student.php" style="color:#5a0016; text-decoration:none;">Dashboard</a> |
+        <a href="../api/logout.php" style="color:#5a0016; text-decoration:none;">Logout</a>
     </div>
 </header>
 

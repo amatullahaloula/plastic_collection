@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
-    header('Location: /plastic_collection/views/login.php');
+    header('Location: ./login.php');
     exit;
 }
 ?>
@@ -12,10 +12,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 <title>Payment Info</title>
 
 <!-- Global transparent background -->
-<link rel="stylesheet" href="/plastic_collection/css/global_bg.css">
+<link rel="stylesheet" href="../css/global_bg.css">
 
 <!-- Main Ashesi theme -->
-<link rel="stylesheet" href="/plastic_collection/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 
 <style>
     .payment-container {
@@ -95,7 +95,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 <div class="payment-container">
 
     <!-- BACK BUTTON -->
-    <a href="/plastic_collection/views/dashboard_student.php" class="back-btn">
+    <a href="./dashboard_student.php" class="back-btn">
         ← Back to Dashboard
     </a>
 
@@ -158,7 +158,7 @@ document.getElementById('paymentForm').addEventListener('submit', async function
     e.preventDefault();
     const form = new FormData(this);
 
-    const res = await fetch('/plastic_collection/api/save_payment.php', {
+    const res = await fetch('../api/save_payment.php', {
         method: 'POST',
         body: form
     });

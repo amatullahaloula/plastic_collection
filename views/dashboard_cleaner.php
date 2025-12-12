@@ -117,7 +117,7 @@ button { padding:8px 12px; border-radius:8px; border:none; cursor:pointer; color
     <div class="header">
         <h1>Cleaner Dashboard</h1>
         <div>
-            <?= h($user['nickname']) ?> | <a href="/plastic_collection/api/logout.php">Logout</a>
+            <?= h($user['nickname']) ?> | <a href="../api/logout.php">Logout</a>
         </div>
     </div>
 

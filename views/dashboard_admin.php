@@ -236,7 +236,7 @@ button:hover { background:#1d4ed8; }
             <span style="color:#666;">
                 <?= h($user['nickname']) ?>
             </span>
-            <a href="/plastic_collection/api/logout.php" class="logout-link">Logout</a>
+            <a href="../api/logout.php" class="logout-link">Logout</a>
         </div>
     </header>
 

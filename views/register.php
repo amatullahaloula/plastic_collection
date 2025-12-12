@@ -208,7 +208,7 @@ if (isset($_SESSION['user'])) {
 
                 <div class="row between">
                     <button type="submit" class="btn" id="submitBtn">Sign up</button>
-                    <a href="/plastic_collection/views/login.php">Back to login</a>
+                    <a href="./login.php">Back to login</a>
                 </div>
 
                 <div id="msg" class="msg"></div>

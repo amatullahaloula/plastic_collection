@@ -237,7 +237,7 @@ tbody td {
     </div>
 
     <!-- 🔥 BACK TO DASHBOARD BUTTON -->
-    <a href="/plastic_collection/views/dashboard_student.php" class="back-btn">← Back to Dashboard</a>
+    <a href="./dashboard_student.php" class="back-btn">← Back to Dashboard</a>
 </header>
 
 <div class="container">

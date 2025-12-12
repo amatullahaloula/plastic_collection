@@ -168,7 +168,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     btn.disabled = true;
 
     try {
-        const res = await fetch('/plastic_collection/api/login.php', {
+        const res = await fetch('../api/login.php', {
             method: 'POST',
             body: fd
         });

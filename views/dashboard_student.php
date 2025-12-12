@@ -13,7 +13,7 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Student Dashboard - Ashesi Plastic</title>
 
-    <link rel="stylesheet" href="/plastic_collection/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 
     <style>
@@ -89,9 +89,9 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 <header class="top">
     <div style="color: #3b82f6; text-decoration: none;">Ashesi Plastic Student page</div>
     <div>
-        <a href="/plastic_collection/views/help_center.php" style="color: #3b82f6; text-decoration: none;">Help Center</a> |
+        <a href="./help_center.php" style="color: #3b82f6; text-decoration: none;">Help Center</a> |
         <?= htmlspecialchars($displayName); ?> |
-        <a href="/plastic_collection/api/logout.php" style="color: #3b82f6; text-decoration: none;">Logout</a>
+        <a href="../api/logout.php" style="color: #3b82f6; text-decoration: none;">Logout</a>
     </div>
 </header>
 
@@ -100,37 +100,37 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
     <div class="grid-3">
 
         <!-- Submit Request -->
-        <a class="card-canva" href="/plastic_collection/views/student_request.php">
+        <a class="card-canva" href="./student_request.php">
             <span></span>
             Submit Request
         </a>
 
         <!-- Payment Info -->
-        <a class="card-canva" href="/plastic_collection/views/payment_info.php">
+        <a class="card-canva" href="./payment_info.php">
             <span></span>
             Payment Info
         </a>
 
         <!-- History (NEW Separate Page) -->
-        <a class="card-canva" href="/plastic_collection/views/student_history.php">
+        <a class="card-canva" href="./student_history.php">
             <span></span>
             My Collection History
         </a>
 
         <!-- Help Center -->
-        <a class="card-canva" href="/plastic_collection/views/help_center.php">
+        <a class="card-canva" href="./help_center.php">
             <span>❓</span>
             Help Center
         </a>
 
         <!-- Recycling Rules (NEW PAGE) -->
-        <a class="card-canva" href="/plastic_collection/views/recycling_rules.php">
+        <a class="card-canva" href="./recycling_rules.php">
             <span></span>
             Recycling Rules
         </a>
 
         <!-- My Profile (NEW PAGE) -->
-        <a class="card-canva" href="/plastic_collection/views/student_profile.php">
+        <a class="card-canva" href="./student_profile.php">
             <span></span>
             My Profile
         </a>

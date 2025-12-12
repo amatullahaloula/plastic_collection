@@ -29,10 +29,10 @@ const REWARD_RATE = 1.00;
 <head>
 <meta charset="UTF-8">
 <title>Submit Request - Ashesi Plastic</title>
-<link rel="stylesheet" href="/plastic_collection/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <style>
 body { margin:0; padding:0; font-family:sans-serif; background:#f6f6f6; }
-.page-background { background:url('/plastic_collection/assets/empty_bottle_picture.png') center/cover no-repeat; position:fixed; inset:0; opacity:.35; filter:blur(6px); z-index:-1; }
+.page-background { background:url('../css/assets/empty_bottle_picture.png') center/cover no-repeat; position:fixed; inset:0; opacity:.35; filter:blur(6px); z-index:-1; }
 .wrapper { margin:30px; padding:25px; background:rgba(255,255,255,0.7); backdrop-filter:blur(12px); border-radius:18px; }
 .card { background:white; padding:20px; border-radius:18px; box-shadow:0 4px 18px rgba(0,0,0,0.08); }
 .section-title { color:#5a0016; }
@@ -50,7 +50,7 @@ button:hover { background:#224c87; }
 <div class="page-background"></div>
 <div class="wrapper">
 
-<a href="/plastic_collection/views/dashboard_student.php" class="btn-back">⬅ Back</a>
+<a href="./dashboard_student.php" class="btn-back">⬅ Back</a>
 
 <div class="card">
     <h2 class="section-title">Submit Plastic Collection Request </h2>
@@ -115,7 +115,7 @@ document.getElementById('requestForm').addEventListener('submit', async e => {
     const formData = new FormData(e.target);
 
     try {
-        const res = await fetch('/plastic_collection/api/create_request.php', {
+        const res = await fetch('../api/create_request.php', {
             method: 'POST',
             body: formData,
             credentials: 'same-origin'
