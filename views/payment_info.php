@@ -138,6 +138,40 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 </div>
 
 <script>
+// Load existing payment info on page load
+async function loadPaymentInfo() {
+    try {
+        const res = await fetch('../api/get_payment.php');
+        const data = await res.json();
+
+        if (data.success && data.data) {
+            const payment = data.data;
+            
+            // Pre-select the method
+            document.getElementById('method').value = payment.method;
+            
+            // Trigger change event to load fields
+            document.getElementById('method').dispatchEvent(new Event('change'));
+
+            // Pre-fill the fields after a short delay
+            setTimeout(() => {
+                if (payment.method === 'momo') {
+                    document.querySelector('[name="momo_number"]').value = payment.momo_number || '';
+                    document.querySelector('[name="network"]').value = payment.network || '';
+                } else if (payment.method === 'bank') {
+                    document.querySelector('[name="bank_name"]').value = payment.bank_name || '';
+                    document.querySelector('[name="account_number"]').value = payment.account_number || '';
+                }
+            }, 100);
+        }
+    } catch (error) {
+        console.error('Error loading payment info:', error);
+    }
+}
+
+// Load payment info when page loads
+loadPaymentInfo();
+
 // Generate fields depending on method
 document.getElementById('method').addEventListener('change', function () {
     let box = document.getElementById('dynamicFields');
@@ -187,6 +221,7 @@ document.getElementById('paymentForm').addEventListener('submit', async function
     if (j.success) {
         msg.style.color = "green";
         msg.textContent = "Payment info saved successfully!";
+        loadPaymentInfo();
     } else {
         msg.style.color = "red";
         msg.textContent = j.error || "Something went wrong";

@@ -241,7 +241,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
         <div class="card">
             <h2>Send us a message ✉️</h2>
-            <form id="supportForm" action="/plastic_collection/api/send_support.php" method="POST">
+            <form id="supportForm" action="../api/submit_support.php" method="POST">
                 
                 <label for="supportEmail">Your Email</label>
                 <input type="email" id="supportEmail" name="email" placeholder="yourname@ashesi.edu.gh" required value="<?php echo htmlspecialchars($_SESSION['user']['email'] ?? ''); ?>">
