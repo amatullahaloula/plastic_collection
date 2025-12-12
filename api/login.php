@@ -37,9 +37,9 @@ try {
     }
 
     // response with redirect target
-    $target = '/plastic_collection/views/dashboard_student.php';
-    if ($user['role'] === 'cleaner') $target = '/plastic_collection/views/dashboard_cleaner.php';
-    if ($user['role'] === 'admin') $target = '/plastic_collection/views/dashboard_admin.php';
+    $target = '../views/dashboard_student.php';
+    if ($user['role'] === 'cleaner') $target = '../views/dashboard_cleaner.php';
+    if ($user['role'] === 'admin') $target = '../views/dashboard_admin.php';
 
     echo json_encode(['success' => true, 'redirect' => $target]);
 

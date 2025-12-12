@@ -38,7 +38,7 @@ try {
         ':message' => $message
     ]);
 
-    header("Location: /plastic_collection/views/help_center.php?sent=1");
+    header("Location: ../views/help_center.php?sent=1");
     exit;
 
 } catch (Exception $e) {

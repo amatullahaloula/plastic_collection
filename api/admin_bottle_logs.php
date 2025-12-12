@@ -57,7 +57,7 @@ h2 {
     <div>📦 Ashesi Plastic — Collection Logs</div>
     <div>
         <?php echo htmlspecialchars($user['nickname']); ?> |
-        <a href="/plastic_collection/api/logout.php">Logout</a>
+        <a href="../logout.php">Logout</a>
     </div>
 </header>
 
@@ -84,7 +84,7 @@ h2 {
 
 <script>
 async function loadLogs() {
-    const res = await fetch('/plastic_collection/api/admin_bottle_logs.php');
+    const res = await fetch('./api/admin_bottle_logs.php');
     const j = await res.json();
 
     const tbody = document.getElementById("logsBody");
