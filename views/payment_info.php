@@ -68,12 +68,37 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
         margin-top: 15px;
         font-weight: bold;
     }
+
+    /* FIXED BACK BUTTON */
+    .back-btn {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        background: var(--accent);
+        color: white !important;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+        opacity: 1 !important;
+        backdrop-filter: none !important;
+    }
+
+    .back-btn:hover {
+        background: var(--accent-dark);
+    }
 </style>
 </head>
 
 <body>
 
 <div class="payment-container">
+
+    <!-- BACK BUTTON -->
+    <a href="/plastic_collection/views/dashboard_student.php" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
     <h2>Payment Information</h2>
     <p>Enter your payment details to receive your rewards safely.</p>
 

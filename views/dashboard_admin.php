@@ -46,8 +46,8 @@ try {
     error_log("Top cleaners query error: " . $e->getMessage());
 }
 
-// Analytics: Revenue Generated (assuming GH₵0.50 per bottle)
-$pricePerBottle = 0.50;
+// Analytics: Revenue Generated (assuming GH₵1.00 per bottle)
+$pricePerBottle = 1.00;
 try {
     $stmt = $pdo->query("
         SELECT 
@@ -115,21 +115,62 @@ $filtered = array_filter($requests, function($r) use ($statusFilter, $studentFil
 });
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard</title>
+<title>Admin Dashboard - Ashesi Plastic</title>
 <link rel="stylesheet" href="/plastic_collection/css/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 body { margin:0; padding:0; font-family:"Inter", Arial, sans-serif; background:#f6f6f6; }
 .wrap { max-width:1400px; margin:auto; padding:20px; }
-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+header { 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    margin-bottom:20px; 
+    background:white;
+    padding:15px 25px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.header-title { 
+    font-size:24px; 
+    font-weight:700; 
+    color:#1b3d6d;
+}
+.header-title span {
+    font-weight:300;
+    color:#666;
+}
+.header-right {
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+.analytics-btn {
+    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:transform 0.2s, box-shadow 0.2s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+.analytics-btn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(102, 126, 234, 0.4);
+}
 .card { background:white; border-radius:14px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.12); margin-bottom:20px; }
 h3 { color:#1b3d6d; margin-bottom:12px; font-size:20px; }
 table { width:100%; border-collapse:collapse; }
 th, td { padding:8px 10px; border-bottom:1px solid #eee; text-align:left; font-size:14px; }
+th { background:#f8f9fa; font-weight:600; color:#1b3d6d; }
 .status-pending { color:#d97706; font-weight:600; }
 .status-accepted { color:#059669; font-weight:600; }
 .status-completed { color:#16a34a; font-weight:600; }
@@ -143,7 +184,16 @@ button:hover { background:#1d4ed8; }
 .reset-btn:hover { background:#d1d5db; }
 
 .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-bottom:20px; }
-.stat-card { background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; padding:20px; border-radius:12px; }
+.stat-card { 
+    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color:white; 
+    padding:20px; 
+    border-radius:12px;
+    transition:transform 0.2s;
+}
+.stat-card:hover {
+    transform:translateY(-3px);
+}
 .stat-card.green { background:linear-gradient(135deg, #10b981 0%, #059669 100%); }
 .stat-card.blue { background:linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
 .stat-card.orange { background:linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
@@ -157,38 +207,55 @@ button:hover { background:#1d4ed8; }
 .top-list { list-style:none; padding:0; margin:0; }
 .top-list li { padding:12px; border-bottom:1px solid #f0f0f0; display:flex; justify-content:space-between; align-items:center; }
 .top-list li:last-child { border-bottom:none; }
+.top-list li:hover { background:#f8f9fa; }
 .rank { background:#2563eb; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; margin-right:12px; }
 .rank.gold { background:#f59e0b; }
 .rank.silver { background:#6b7280; }
 .rank.bronze { background:#cd7f32; }
+
+.logout-link {
+    color:#ef4444;
+    text-decoration:none;
+    font-weight:600;
+}
+.logout-link:hover {
+    text-decoration:underline;
+}
 </style>
 </head>
 <body>
 <div class="wrap">
     <header>
-        <div><strong>Ashesi Plastic</strong> — Admin Dashboard</div>
-        <div>
-            <?= h($user['nickname']) ?> &nbsp;|&nbsp;
-            <a href="/plastic_collection/api/logout.php" style="text-decoration:none;">Logout</a>
+        <div class="header-title">
+            Ashesi Plastic <span>— Admin Dashboard</span>
+        </div>
+        <div class="header-right">
+            <a href="admin_analytics.php" class="analytics-btn">
+                📊 Advanced Analytics
+            </a>
+            <span style="color:#666;">
+                <?= h($user['nickname']) ?>
+            </span>
+            <a href="/plastic_collection/api/logout.php" class="logout-link">Logout</a>
         </div>
     </header>
 
     <!-- Statistics Cards -->
     <div class="stats-grid">
         <div class="stat-card green">
-            <div class="stat-label">Total Revenue</div>
+            <div class="stat-label">💰 Total Revenue</div>
             <div class="stat-value">GH₵<?= number_format($totalRevenue, 2) ?></div>
         </div>
         <div class="stat-card blue">
-            <div class="stat-label">Bottles Collected</div>
+            <div class="stat-label">♻️ Bottles Collected</div>
             <div class="stat-value"><?= number_format($totalBottles) ?></div>
         </div>
         <div class="stat-card orange">
-            <div class="stat-label">Completed Requests</div>
+            <div class="stat-label">✅ Completed Requests</div>
             <div class="stat-value"><?= number_format($totalRequests) ?></div>
         </div>
         <div class="stat-card">
-            <div class="stat-label">Avg. Bottles/Request</div>
+            <div class="stat-label">📊 Avg. Bottles/Request</div>
             <div class="stat-value"><?= $totalRequests > 0 ? number_format($totalBottles / $totalRequests, 1) : '0' ?></div>
         </div>
     </div>
@@ -242,7 +309,7 @@ button:hover { background:#1d4ed8; }
 
     <!-- Filter Section -->
     <section class="card">
-        <h3>Filter Requests</h3>
+        <h3>🔍 Filter Requests</h3>
         <form method="get" class="filters">
             <select name="status">
                 <option value="">All statuses</option>
@@ -257,7 +324,7 @@ button:hover { background:#1d4ed8; }
 
     <!-- Requests Table -->
     <section class="card">
-        <h3>All Requests (<?= count($filtered) ?>)</h3>
+        <h3>📋 All Requests (<?= count($filtered) ?>)</h3>
         <div style="overflow:auto; max-height:600px;">
             <table>
                 <thead>
@@ -307,6 +374,62 @@ button:hover { background:#1d4ed8; }
             </table>
         </div>
     </section>
+
+    <!-- Support Requests Section -->
+    <?php
+    try {
+        $stmt = $pdo->query("
+            SELECT sr.*, u.first_name, u.last_name, u.nickname
+            FROM support_requests sr
+            LEFT JOIN users u ON u.id = sr.user_id
+            ORDER BY sr.created_at DESC
+            LIMIT 50
+        ");
+        $supportRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $supportRequests = [];
+        error_log("Support requests error: " . $e->getMessage());
+    }
+    ?>
+    <section class="card">
+        <h3>💬 Support Requests (<?= count($supportRequests) ?>)</h3>
+        <div style="overflow:auto; max-height:600px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($supportRequests)): ?>
+                        <tr><td colspan="7" class="small" style="text-align:center; padding:20px;">No support requests found.</td></tr>
+                    <?php else: ?>
+                        <?php foreach ($supportRequests as $sr): ?>
+                            <tr>
+                                <td><?= h($sr['id']) ?></td>
+                                <td><?= h($sr['nickname'] ?? $sr['first_name'] . ' ' . $sr['last_name'] ?? 'Guest') ?></td>
+                                <td class="small"><?= h($sr['email']) ?></td>
+                                <td><?= h($sr['subject'] ?: 'General Inquiry') ?></td>
+                                <td class="small" style="max-width:300px;"><?= h(substr($sr['message'], 0, 100)) ?><?= strlen($sr['message']) > 100 ? '...' : '' ?></td>
+                                <td>
+                                    <span class="<?= $sr['status'] === 'resolved' ? 'status-completed' : 'status-pending' ?>">
+                                        <?= h($sr['status']) ?>
+                                    </span>
+                                </td>
+                                <td class="small"><?= h($sr['created_at']) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </div>
 
 <script>
@@ -321,7 +444,7 @@ new Chart(document.getElementById('statusChart'), {
         labels: statusLabels,
         datasets: [{
             data: statusCounts,
-            backgroundColor: ['#f59e0b', '#ef4444', '#16a34a'],
+            backgroundColor: ['#f59e0b', '#ef4444', '#16a34a', '#3b82f6'],
             borderWidth: 2,
             borderColor: '#fff'
         }]
