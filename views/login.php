@@ -5,9 +5,9 @@ session_start();
 // Si déjà connecté → rediriger par rôle
 if (isset($_SESSION['user'])) {
     $role = $_SESSION['user']['role'];
-    if ($role === 'student') header('Location: /plastic_collection/views/dashboard_student.php');
-    else if ($role === 'cleaner') header('Location: /plastic_collection/views/dashboard_cleaner.php');
-    else if ($role === 'admin') header('Location: /plastic_collection/views/dashboard_admin.php');
+    if ($role === 'student') header('Location: ./dashboard_student.php');
+    else if ($role === 'cleaner') header('Location: ./dashboard_cleaner.php');
+    else if ($role === 'admin') header('Location: ./dashboard_admin.php');
     // Assurer l'arrêt après la redirection
     exit; 
 }
@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
 <title>Login - Plastic Collection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/plastic_collection/css/auth.css">
+<link rel="stylesheet" href="../css/auth.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
