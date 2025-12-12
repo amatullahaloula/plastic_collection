@@ -113,6 +113,21 @@ $filtered = array_filter($requests, function($r) use ($statusFilter, $studentFil
     }
     return $match;
 });
+
+// Support Requests
+try {
+    $stmt = $pdo->query("
+        SELECT sr.*, u.first_name, u.last_name, u.nickname
+        FROM support_requests sr
+        LEFT JOIN users u ON u.id = sr.user_id
+        ORDER BY sr.created_at DESC
+        LIMIT 50
+    ");
+    $supportRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+    $supportRequests = [];
+    error_log("Support requests error: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,22 +139,22 @@ $filtered = array_filter($requests, function($r) use ($statusFilter, $studentFil
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body { margin:0; padding:0; font-family:"Inter", Arial, sans-serif; background:#f6f6f6; }
+body { margin:0; padding:0; font-family:"Inter", Arial, sans-serif; background:linear-gradient(135deg, #800020 0%, #4a0012 100%); min-height:100vh; }
 .wrap { max-width:1400px; margin:auto; padding:20px; }
 header { 
     display:flex; 
     justify-content:space-between; 
     align-items:center; 
     margin-bottom:20px; 
-    background:white;
-    padding:15px 25px;
+    background:rgba(255,255,255,0.98);
+    padding:20px 30px;
     border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(128,0,32,0.3);
 }
 .header-title { 
-    font-size:24px; 
+    font-size:28px; 
     font-weight:700; 
-    color:#1b3d6d;
+    color:#800020;
 }
 .header-title span {
     font-weight:300;
@@ -151,7 +166,7 @@ header {
     align-items:center;
 }
 .analytics-btn {
-    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background:linear-gradient(135deg, #800020 0%, #4a0012 100%);
     color:white;
     padding:10px 20px;
     border-radius:8px;
@@ -164,13 +179,13 @@ header {
 }
 .analytics-btn:hover {
     transform:translateY(-2px);
-    box-shadow:0 6px 20px rgba(102, 126, 234, 0.4);
+    box-shadow:0 6px 20px rgba(128,0,32,0.4);
 }
-.card { background:white; border-radius:14px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.12); margin-bottom:20px; }
-h3 { color:#1b3d6d; margin-bottom:12px; font-size:20px; }
+.card { background:white; border-radius:14px; padding:20px; box-shadow:0 6px 15px rgba(128,0,32,0.15); margin-bottom:20px; border-left:4px solid #800020; }
+h3 { color:#800020; margin-bottom:12px; font-size:20px; }
 table { width:100%; border-collapse:collapse; }
 th, td { padding:8px 10px; border-bottom:1px solid #eee; text-align:left; font-size:14px; }
-th { background:#f8f9fa; font-weight:600; color:#1b3d6d; }
+th { background:#f8f9fa; font-weight:600; color:#800020; }
 .status-pending { color:#d97706; font-weight:600; }
 .status-accepted { color:#059669; font-weight:600; }
 .status-completed { color:#16a34a; font-weight:600; }
@@ -178,24 +193,24 @@ th { background:#f8f9fa; font-weight:600; color:#1b3d6d; }
 .small { font-size:12px; color:#666; }
 .filters { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
 input, select { padding:8px; border-radius:6px; border:1px solid #ccc; font-size:14px; }
-button { padding:8px 12px; border-radius:6px; border:none; background:#2563eb; color:white; cursor:pointer; }
-button:hover { background:#1d4ed8; }
-.reset-btn { text-decoration:none; padding:8px 12px; background:#e5e7eb; border-radius:6px; color:#374151; display:inline-block; }
+button { padding:8px 12px; border-radius:6px; border:none; background:#800020; color:white; cursor:pointer; font-weight:600; }
+button:hover { background:#4a0012; }
+.reset-btn { text-decoration:none; padding:8px 12px; background:#e5e7eb; border-radius:6px; color:#374151; display:inline-block; font-weight:600; }
 .reset-btn:hover { background:#d1d5db; }
 
 .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-bottom:20px; }
 .stat-card { 
-    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    background:linear-gradient(135deg, #800020 0%, #4a0012 100%); 
     color:white; 
     padding:20px; 
     border-radius:12px;
     transition:transform 0.2s;
+    box-shadow:0 6px 15px rgba(128,0,32,0.3);
 }
 .stat-card:hover {
     transform:translateY(-3px);
 }
 .stat-card.green { background:linear-gradient(135deg, #10b981 0%, #059669 100%); }
-.stat-card.blue { background:linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
 .stat-card.orange { background:linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
 .stat-value { font-size:32px; font-weight:700; margin:10px 0; }
 .stat-label { font-size:14px; opacity:0.9; }
@@ -208,13 +223,13 @@ button:hover { background:#1d4ed8; }
 .top-list li { padding:12px; border-bottom:1px solid #f0f0f0; display:flex; justify-content:space-between; align-items:center; }
 .top-list li:last-child { border-bottom:none; }
 .top-list li:hover { background:#f8f9fa; }
-.rank { background:#2563eb; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; margin-right:12px; }
+.rank { background:#800020; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; margin-right:12px; }
 .rank.gold { background:#f59e0b; }
 .rank.silver { background:#6b7280; }
 .rank.bronze { background:#cd7f32; }
 
 .logout-link {
-    color:#ef4444;
+    color:#800020;
     text-decoration:none;
     font-weight:600;
 }
@@ -227,12 +242,9 @@ button:hover { background:#1d4ed8; }
 <div class="wrap">
     <header>
         <div class="header-title">
-            Ashesi Plastic <span>— Admin Dashboard</span>
+            🌍 Ashesi Plastic <span>— Admin Dashboard</span>
         </div>
         <div class="header-right">
-            <a href="admin_analytics.php" class="analytics-btn">
-                📊 Advanced Analytics
-            </a>
             <span style="color:#666;">
                 <?= h($user['nickname']) ?>
             </span>
@@ -246,7 +258,7 @@ button:hover { background:#1d4ed8; }
             <div class="stat-label">💰 Total Revenue</div>
             <div class="stat-value">GH₵<?= number_format($totalRevenue, 2) ?></div>
         </div>
-        <div class="stat-card blue">
+        <div class="stat-card">
             <div class="stat-label">♻️ Bottles Collected</div>
             <div class="stat-value"><?= number_format($totalBottles) ?></div>
         </div>
@@ -376,21 +388,6 @@ button:hover { background:#1d4ed8; }
     </section>
 
     <!-- Support Requests Section -->
-    <?php
-    try {
-        $stmt = $pdo->query("
-            SELECT sr.*, u.first_name, u.last_name, u.nickname
-            FROM support_requests sr
-            LEFT JOIN users u ON u.id = sr.user_id
-            ORDER BY sr.created_at DESC
-            LIMIT 50
-        ");
-        $supportRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } catch (Exception $e) {
-        $supportRequests = [];
-        error_log("Support requests error: " . $e->getMessage());
-    }
-    ?>
     <section class="card">
         <h3>💬 Support Requests (<?= count($supportRequests) ?>)</h3>
         <div style="overflow:auto; max-height:600px;">
@@ -433,7 +430,6 @@ button:hover { background:#1d4ed8; }
 </div>
 
 <script>
-// Status Distribution Pie Chart
 const statusData = <?= json_encode($statusDist) ?>;
 const statusLabels = statusData.map(s => s.status_cleaner || 'unknown');
 const statusCounts = statusData.map(s => parseInt(s.count));
@@ -444,7 +440,7 @@ new Chart(document.getElementById('statusChart'), {
         labels: statusLabels,
         datasets: [{
             data: statusCounts,
-            backgroundColor: ['#f59e0b', '#ef4444', '#16a34a', '#3b82f6'],
+            backgroundColor: ['#f59e0b', '#ef4444', '#16a34a', '#800020'],
             borderWidth: 2,
             borderColor: '#fff'
         }]
@@ -460,7 +456,6 @@ new Chart(document.getElementById('statusChart'), {
     }
 });
 
-// Monthly Trend Line Chart
 const trendData = <?= json_encode($monthlyTrend) ?>;
 const trendLabels = trendData.map(t => t.month);
 const trendBottles = trendData.map(t => parseInt(t.bottles));
@@ -473,15 +468,15 @@ new Chart(document.getElementById('trendChart'), {
         datasets: [{
             label: 'Bottles Collected',
             data: trendBottles,
-            borderColor: '#059669',
-            backgroundColor: 'rgba(5, 150, 105, 0.1)',
+            borderColor: '#800020',
+            backgroundColor: 'rgba(128, 0, 32, 0.1)',
             tension: 0.4,
             fill: true
         }, {
             label: 'Requests',
             data: trendRequests,
-            borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            borderColor: '#059669',
+            backgroundColor: 'rgba(5, 150, 105, 0.1)',
             tension: 0.4,
             fill: true
         }]

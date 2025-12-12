@@ -21,29 +21,60 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
             margin: 0;
             padding: 0;
             font-family: "Inter", sans-serif;
-            background: #f6f6f6;
+            background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+            min-height: 100vh;
         }
 
         .page-background {
             background: url('/plastic_collection/img/bottles_bg.png') center/cover no-repeat;
             position: fixed;
             inset: 0;
-            opacity: 0.35;
+            opacity: 0.15;
             filter: blur(6px);
             z-index: -1;
         }
 
         .transparent-wrapper {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             border-radius: 18px;
             padding: 20px;
             margin: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        header.top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+        }
+
+        header.top > div:first-child {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        header.top a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        header.top a:hover {
+            opacity: 0.8;
         }
 
         main.container {
-            background: rgba(255,255,255,0.85);
-            padding: 25px;
+            background: rgba(255,255,255,0.98);
+            padding: 35px;
             border-radius: 18px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
@@ -56,27 +87,62 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
         }
 
         .card-canva {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 18px;
-            padding: 22px;
-            box-shadow: 0 3px 14px rgba(0,0,0,0.07);
-            transition: 0.2s;
+            padding: 30px 22px;
+            box-shadow: 0 4px 14px rgba(128, 0, 32, 0.12);
+            transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
-            color: black;
+            color: #800020;
             font-size: 18px;
             font-weight: 600;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-canva::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+
+        .card-canva:hover::before {
+            left: 0;
+            opacity: 1;
         }
 
         .card-canva:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(128, 0, 32, 0.25);
+            border-color: #800020;
+            color: white;
         }
 
         .card-canva span {
-            font-size: 36px;
+            font-size: 42px;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .card-canva:hover span {
+            transform: scale(1.1);
+        }
+
+        .card-canva > div {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -87,11 +153,11 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 <div class="transparent-wrapper">
 
 <header class="top">
-    <div style="color: #3b82f6; text-decoration: none;">Ashesi Plastic Student page</div>
+    <div>Ashesi Plastic Student page</div>
     <div>
-        <a href="./help_center.php" style="color: #3b82f6; text-decoration: none;">Help Center</a> |
+        <a href="./help_center.php">Help Center</a> |
         <?= htmlspecialchars($displayName); ?> |
-        <a href="../api/logout.php" style="color: #3b82f6; text-decoration: none;">Logout</a>
+        <a href="../api/logout.php">Logout</a>
     </div>
 </header>
 
@@ -101,38 +167,38 @@ $displayName = $user['nickname'] ?: ($user['first_name'] ?? 'Student');
 
         <!-- Submit Request -->
         <a class="card-canva" href="./student_request.php">
-            <span></span>
-            Submit Request
+            <span>📝</span>
+            <div>Submit Request</div>
         </a>
 
         <!-- Payment Info -->
         <a class="card-canva" href="./payment_info.php">
-            <span></span>
-            Payment Info
+            <span>💳</span>
+            <div>Payment Info</div>
         </a>
 
         <!-- History (NEW Separate Page) -->
         <a class="card-canva" href="./student_history.php">
-            <span></span>
-            My Collection History
+            <span>📋</span>
+            <div>My Collection History</div>
         </a>
 
         <!-- Help Center -->
         <a class="card-canva" href="./help_center.php">
             <span>❓</span>
-            Help Center
+            <div>Help Center</div>
         </a>
 
         <!-- Recycling Rules (NEW PAGE) -->
         <a class="card-canva" href="./recycling_rules.php">
-            <span></span>
-            Recycling Rules
+            <span>♻️</span>
+            <div>Recycling Rules</div>
         </a>
 
         <!-- My Profile (NEW PAGE) -->
         <a class="card-canva" href="./student_profile.php">
-            <span></span>
-            My Profile
+            <span>👤</span>
+            <div>My Profile</div>
         </a>
     </div>
 

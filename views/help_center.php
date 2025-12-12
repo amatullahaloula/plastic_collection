@@ -18,14 +18,15 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 <style>
     /* ------------------------------------------- */
-    /* FUSION ET NETTOYAGE CSS */
+    /* FUSION ET NETTOYAGE CSS - MAROON THEME */
     /* ------------------------------------------- */
 
     body {
         margin: 0;
         padding: 0;
         font-family: "Inter", sans-serif;
-        background: #f6f6f6;
+        background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+        min-height: 100vh;
     }
 
     /* Arrière-plan (utilise l'URL Unsplash pour la cohérence avec le CSS inséré) */
@@ -34,19 +35,20 @@ $user_role = $_SESSION['user']['role'] ?? '';
             center/cover no-repeat;
         position: fixed;
         inset: 0;
-        opacity: 0.35;
+        opacity: 0.15;
         filter: blur(6px);
         z-index: -1;
     }
 
     /* Transparent container behavior (Wrapper principal) */
     .transparent-wrapper {
-        background: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(12px);
         border-radius: 18px;
         padding: 20px;
         margin: 20px auto;
-        max-width: 900px; /* Ajout d'une largeur maximale pour la lisibilité */
+        max-width: 900px;
+        box-shadow: 0 20px 60px rgba(128, 0, 32, 0.4);
     }
 
     /* Conteneur de la page (à l'intérieur du wrapper) */
@@ -55,7 +57,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
     }
 
     .title {
-        color: #1b3d6d;
+        color: #800020;
         font-size: 36px;
         margin-bottom: 10px;
     }
@@ -63,7 +65,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
     .subtitle {
         color: #555;
         margin-bottom: 25px;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid #800020;
         padding-bottom: 15px;
     }
 
@@ -72,11 +74,12 @@ $user_role = $_SESSION['user']['role'] ?? '';
         border-radius: 12px;
         padding: 25px;
         margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(128, 0, 32, 0.12);
+        border-left: 4px solid #800020;
     }
 
     .card h2 {
-        color: #5a0016; /* Utilisation de la couleur du tableau de bord étudiant pour les titres */
+        color: #800020;
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
         margin-top: 0;
@@ -85,7 +88,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
     /* Styles pour la section FAQ (collapse) */
     .collapse-btn {
         background: #f8f8f8;
-        color: #1b3d6d;
+        color: #800020;
         cursor: pointer;
         padding: 12px 18px;
         width: 100%;
@@ -96,10 +99,11 @@ $user_role = $_SESSION['user']['role'] ?? '';
         transition: 0.4s;
         border-radius: 6px;
         margin-bottom: 5px;
+        font-weight: 600;
     }
 
     .collapse-btn:hover {
-        background-color: #e6e6e6;
+        background: rgba(128, 0, 32, 0.1);
     }
 
     .collapse-content {
@@ -133,17 +137,38 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
     .send-btn {
         padding: 12px 20px;
-        background: #5a0016; /* Couleur différente pour le bouton de contact */
+        background: #800020;
         color: white;
         border: none;
         border-radius: 8px;
         cursor: pointer;
         margin-top: 15px;
         transition: background 0.3s;
+        font-weight: 600;
     }
 
     .send-btn:hover {
-        background: #7a0026;
+        background: #4a0012;
+    }
+
+    header {
+        padding: 10px 20px;
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+
+    header a:hover {
+        background: rgba(255, 255, 255, 0.3);
     }
 </style>
 
@@ -151,11 +176,11 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 <body>
 
-<header style="padding: 10px 20px; text-align: right;">
+<header>
     <?php if ($is_logged_in): ?>
-        <a href="./dashboard_<?php echo $user_role; ?>.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Back to Dashboard</a>
+        <a href="./dashboard_<?php echo $user_role; ?>.php">← Back to Dashboard</a>
     <?php else: ?>
-        <a href="./login.php" style="color:#1b3d6d; text-decoration: none; font-weight: 600;">← Login</a>
+        <a href="./login.php">← Login</a>
     <?php endif; ?>
 </header>
 
@@ -165,11 +190,11 @@ $user_role = $_SESSION['user']['role'] ?? '';
 <div class="transparent-wrapper">
     <div class="container">
 
-        <h1 class="title"> Help Center</h1>
+        <h1 class="title">❓ Help Center</h1>
         <p class="subtitle">Find answers, contact support and learn how recycling works.</p>
 
         <div class="card">
-            <h2>Frequently Asked Questions </h2>
+            <h2>Frequently Asked Questions 💬</h2>
 
             <div class="collapse">
                 <button class="collapse-btn">• How do I earn rewards? (Tap to expand)</button>
@@ -206,7 +231,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 
         <div class="card">
-            <h2>Contact Support </h2>
+            <h2>Contact Support 📞</h2>
 
             <p><strong>Email:</strong> ashesi-recycling@support.com</p>
             <p><strong>Phone:</strong> +233 55 123 4567</p>
@@ -215,7 +240,7 @@ $user_role = $_SESSION['user']['role'] ?? '';
 
 
         <div class="card">
-            <h2>Send us a message </h2>
+            <h2>Send us a message ✉️</h2>
             <form id="supportForm" action="/plastic_collection/api/send_support.php" method="POST">
                 
                 <label for="supportEmail">Your Email</label>
@@ -233,7 +258,8 @@ $user_role = $_SESSION['user']['role'] ?? '';
         </div>
 
     </div>
-</div> <script src="../js/help.js"></script> 
+</div>
+<script src="../js/help.js"></script> 
 <script>
     // ----------------------------------------------------
     // Simulating Form Submission (Requires API /plastic_collection/api/send_support.php)
@@ -247,26 +273,23 @@ $user_role = $_SESSION['user']['role'] ?? '';
         const sendBtn = document.getElementById('sendBtn');
         
         msgEl.textContent = 'Sending...';
-        msgEl.style.color = '#1b3d6d';
+        msgEl.style.color = '#800020';
         sendBtn.disabled = true;
 
         const formData = new FormData(form);
 
         try {
-            // Note: Since the backend API for sending support messages is not provided, 
-            // this is a simulated call. You must implement /api/send_support.php.
             const res = await fetch(form.action, {
                 method: 'POST',
                 body: formData
             });
 
-            // Assuming a successful response structure like { success: true }
             const j = await res.json(); 
 
             if (j.success) {
                 msgEl.textContent = 'Message sent successfully! We will get back to you soon.';
                 msgEl.style.color = 'green';
-                form.reset(); // Vider le formulaire après succès
+                form.reset();
             } else {
                 msgEl.textContent = j.error || 'Failed to send message. Please try again.';
                 msgEl.style.color = 'red';
@@ -280,9 +303,8 @@ $user_role = $_SESSION['user']['role'] ?? '';
     });
 
     // ----------------------------------------------------
-    // Collapse Logic (Alternative if ../js/help.js is unavailable or incomplete)
+    // Collapse Logic
     // ----------------------------------------------------
-    /*
     document.querySelectorAll('.collapse-btn').forEach(button => {
         button.addEventListener('click', () => {
             const content = button.nextElementSibling;
@@ -295,7 +317,6 @@ $user_role = $_SESSION['user']['role'] ?? '';
             }
         });
     });
-    */
 </script>
 </body>
 </html>

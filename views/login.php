@@ -8,7 +8,6 @@ if (isset($_SESSION['user'])) {
     if ($role === 'student') header('Location: ./dashboard_student.php');
     else if ($role === 'cleaner') header('Location: ./dashboard_cleaner.php');
     else if ($role === 'admin') header('Location: ./dashboard_admin.php');
-    // Assurer l'arrêt après la redirection
     exit; 
 }
 ?>
@@ -25,52 +24,57 @@ if (isset($_SESSION['user'])) {
 
 <style>
     /* ------------------------------------------- */
-    /* FUSION ET NETTOYAGE CSS */
+    /* FUSION ET NETTOYAGE CSS - MAROON THEME */
     /* ------------------------------------------- */
     
     body {
         margin: 0;
         padding: 0;
         font-family: "Inter", sans-serif;
-        /*background: #f6f6f6; /* On remet une couleur de fond simple ou 'transparent' */
-        
-        /* S'assurer que le body prend au moins toute la hauteur de la vue */
+        background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
         min-height: 100vh; 
         display: flex;
-        justify-content: center; /* Centrer horizontalement le contenu */
-        align-items: center; /* Centrer verticalement le contenu */
+        justify-content: center;
+        align-items: center;
     }
 
     /* Arrière-plan (utilise l'URL Unsplash pour la cohérence avec le CSS inséré) */
     .page-background {
-        /* *** CORRECTION APPLIQUÉE ICI *** */
-        /* Utilisation du chemin direct puisque l'image est dans le dossier CSS */
         background-image: url("../css/asset/empty_bottle_picture .png");
-        /* ******************************* */
-        
+        background-size: cover;
+        background-position: center;
         position: fixed;
         inset: 0;
-        /* opacity: 0.35; */
-        /* filter: blur(6px); */
+        opacity: 0.15;
+        filter: blur(6px);
         z-index: -1;
     }
 
     /* Transparent container behavior (Pour envelopper l'auth-card si nécessaire) */
     .transparent-wrapper {
-        background: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(12px);
         border-radius: 18px;
         padding: 20px;
         margin: 20px;
+        box-shadow: 0 20px 60px rgba(128, 0, 32, 0.4);
     }
     
     /* Centrage de la carte si le body est flex */
     .auth-card {
         max-width: 400px;
         width: 90%;
-        margin: 0 auto; /* Centrage à l'intérieur du wrapper */
+        margin: 0 auto;
         z-index: 10;
         position: relative;
+    }
+
+    .auth-card .title {
+        color: #800020;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
     }
     
     /* Styles pour les messages */
@@ -111,16 +115,39 @@ if (isset($_SESSION['user'])) {
         width: 100%;
         padding: 12px;
         margin-top: 20px;
-        background: #1b3d6d;
+        background: #800020;
         color: white;
         border: none;
         border-radius: 8px;
         cursor: pointer;
         font-size: 16px;
+        font-weight: 600;
         transition: background 0.3s;
     }
     .btn:hover {
-        background: #224c87; /* Correction: le hover doit changer de couleur */
+        background: #4a0012;
+    }
+
+    .row.spaced {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .link {
+        color: #800020;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .link:hover {
+        color: #4a0012;
+        text-decoration: underline;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
     }
 </style>
 </head>
@@ -132,7 +159,7 @@ if (isset($_SESSION['user'])) {
 <div class="transparent-wrapper">
     
     <div class="auth-card fade-in">
-        <h2 class="title">Ashesi Plastic<br>Collection Portal</h2>
+        <h2 class="title">🌍 Ashesi Plastic<br>Collection Portal</h2>
 
         <form id="loginForm">
 
@@ -173,7 +200,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             body: fd
         });
         
-        // Vérifie si la réponse HTTP est OK avant de lire le JSON
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
@@ -183,17 +209,16 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         if (j.success) {
             msg.textContent = "Login successful! Redirecting...";
             msg.classList.add("success");
-            // Redirection vers le dashboard approprié
             setTimeout(() => window.location.href = j.redirect, 600); 
         } else {
             msg.textContent = j.error || "Invalid credentials. Please try again.";
             msg.classList.add("error");
-            btn.disabled = false; // Réactiver le bouton en cas d'échec
+            btn.disabled = false;
         }
     } catch (error) {
         msg.textContent = `Network error: ${error.message}. Cannot connect to API.`;
         msg.classList.add("error");
-        btn.disabled = false; // Réactiver le bouton en cas d'erreur réseau
+        btn.disabled = false;
     }
 });
 </script>

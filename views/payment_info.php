@@ -9,7 +9,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Payment Info</title>
+<title>Payment Info - Ashesi Plastic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Global transparent background -->
 <link rel="stylesheet" href="../css/global_bg.css">
@@ -18,19 +19,29 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
 <link rel="stylesheet" href="../css/style.css">
 
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+
     .payment-container {
         max-width: 600px;
         margin: 40px auto;
-        padding: 25px;
-        background: rgba(255,255,255,0.80);
-        border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        backdrop-filter: blur(6px);
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgba(128, 0, 32, 0.4);
+        backdrop-filter: blur(12px);
     }
 
     h2 {
         margin-bottom: 15px;
-        color: var(--accent);
+        color: #800020;
+        font-size: 28px;
     }
 
     label {
@@ -46,6 +57,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
         padding: 12px;
         border-radius: 8px;
         border: 1px solid #bbb;
+        box-sizing: border-box;
     }
 
     .btn-save {
@@ -53,15 +65,17 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
         width: 100%;
         padding: 12px;
         border: none;
-        background: var(--accent);
+        background: #800020;
         color: white;
         font-size: 16px;
+        font-weight: 600;
         border-radius: 10px;
         cursor: pointer;
+        transition: background 0.3s;
     }
 
     .btn-save:hover {
-        background: var(--accent-dark);
+        background: #4a0012;
     }
 
     #msg {
@@ -72,20 +86,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
     /* FIXED BACK BUTTON */
     .back-btn {
         display: inline-block;
-        margin-bottom: 15px;
-        padding: 10px 15px;
-        background: var(--accent);
-        color: white !important;
+        margin-bottom: 20px;
+        padding: 10px 18px;
+        background: #800020;
+        color: white;
         border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-        opacity: 1 !important;
-        backdrop-filter: none !important;
+        box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+        transition: background 0.3s;
     }
 
     .back-btn:hover {
-        background: var(--accent-dark);
+        background: #4a0012;
+    }
+
+    p {
+        color: #555;
+        margin-bottom: 20px;
     }
 </style>
 </head>
@@ -99,7 +117,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'student') {
         ← Back to Dashboard
     </a>
 
-    <h2>Payment Information</h2>
+    <h2>💳 Payment Information</h2>
     <p>Enter your payment details to receive your rewards safely.</p>
 
     <form id="paymentForm">
