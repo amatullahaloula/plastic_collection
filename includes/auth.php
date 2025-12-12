@@ -18,7 +18,7 @@ function require_login() {
 function require_role($role) {
     require_login();
     if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== $role) {
-        header("Location: /plastic_collection/views/login.php");
+        header("Location: ../views/login.php");
         exit;
     }
 }

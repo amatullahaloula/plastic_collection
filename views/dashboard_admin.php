@@ -172,7 +172,7 @@ body {
 }
 
 .page-background {
-    background: url('/plastic_collection/img/bottles_bg.png') center/cover no-repeat;
+    /* background: url('/plastic_collection/img/bottles_bg.png') center/cover no-repeat; */
     position: fixed;
     inset: 0;
     opacity: 0.15;
