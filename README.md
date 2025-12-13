@@ -19,49 +19,52 @@ Project Links
 
 ---
 
- Table of Contents
+ 
+ ##  Table of Contents
 
- -[Project Links](#-about-the-project)
- -[Features](#-features)
- -[Technology Stack](#-technology-stack)
- -[System Architecture](#-system-architecture)
- -[User Roles](#-user-roles)
- -[Installation](#-installation)
- -[Database Schema](#-database-schema)
- -[Project Structure](#-project-structure)
- -[Screenshots](#-screenshots)
- -[Design Features](#-design-features)
- -[Security Features](#-security-features)
- -[Key Metrics & Analytics](#-key-metrics--analytics)
- -[Future Enhancements](#-future-enhancements)
- -[Contributing](#-contributing)
- -[License](#-license)
- -[Acknowledgments](#-acknowledgments)
- -[Contact](#-contact)
+- [About the Project](#-about-the-project)
+- [Live Demo](#-live-demo)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [System Architecture](#-system-architecture)
+- [User Roles](#-user-roles)
+- [Installation](#-installation)
+- [Database Schema](#-database-schema)
+- [Project Structure](#-project-structure)
+- [Screenshots](#-screenshots)
+- [Design Features](#-design-features)
+- [Security Features](#-security-features)
+- [Key Metrics & Analytics](#-key-metrics--analytics)
+- [Future Enhancements](#-future-enhancements)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
+
 
 ---
 
- About the Project
+## About the Project
 
 The Ashesi Campus Plastic Collection Management & Reward System is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
 
- The Problem
+ ### The Problem
  -❌ Plastic waste accumulation on campus
  -❌ Lack of recycling incentives for students
  -❌ Inefficient waste collection systems
  -❌ Poor tracking and accountability
 
- Our Solution
+ ### Our Solution
  -✅ Financial Rewards: Students earn **1 GHS per bottle** collected
  -✅ Real-time Tracking: Monitor collection requests and rewards
  -✅ Transparent Process: Clear visibility of the entire collection lifecycle
  -✅ User-Friendly Interface: Modern, responsive design with Ashesi's maroon branding
 
 
+---
+  ## Demo Credentials (sample)
 
- Demo Credentials (sample)
-
- Student Account
+ #### Student Account
 **Email**: `student@ashesi.edu.gh`
  **Password**: `demo123`
 
@@ -74,7 +77,7 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
  **Password**: `admin123`
 
 
-
+---
 ## Features
 
 ###  For Students
@@ -101,7 +104,7 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
  -✅ Manage support requests
  -✅ Process student payments
 
-
+---
 
 ##  Technology Stack
 
@@ -183,7 +186,7 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 - Monitor cleaner performance
 - Handle support requests
 
-
+---
 
 ##  Installation
 
@@ -236,7 +239,7 @@ chmod 644 includes/config.php
 Navigate to `http://localhost/plastic_collection` in your browser.
 
 
-
+---
 
 
 ## Project Structure
@@ -352,17 +355,16 @@ The system tracks and displays:
 
 ##  Future Enhancements
 
--  Mobile app (iOS/Android)
--  QR code scanning for bottle verification
-   amification with badges and levels
--  Integration with other recyclables (cans, paper)
--  Push notifications for collection updates
--  Payment gateway integration (automated payouts)
--  Multi-campus expansion
--  Carbon footprint calculator
--  Leaderboard system
--  SMS notifications
-
+- [ ] Mobile app (iOS/Android)
+- [ ] QR code scanning for bottle verification
+- [ ] Gamification with badges and levels
+- [ ] Integration with other recyclables (cans, paper)
+- [ ] Push notifications for collection updates
+- [ ] Payment gateway integration (automated payouts)
+- [ ] Multi-campus expansion
+- [ ] Carbon footprint calculator
+- [ ] Leaderboard system
+- [ ] SMS notifications
 
 
 ##  Contributing
@@ -381,13 +383,13 @@ Contributions are welcome! Please follow these steps:
 - Comment complex logic
 - Write descriptive commit messages
 
-
+---
 
 ##  License
 
 This project is free for use.
 
-
+---
 
 ##  Acknowledgments
 
@@ -396,7 +398,7 @@ This project is free for use.
 - **Cleaners and Students** - For participating in user testing
 - **Open Source Community** - For the amazing tools and libraries
 
-
+---
 
 ##  Project Statistics
 
@@ -408,7 +410,7 @@ This project is free for use.
 - **User Roles**: 3 distinct roles
 - **API Endpoints**: 8+ endpoints
 
-
+---
 
 ## Environmental Impact
 
@@ -419,7 +421,7 @@ This project is free for use.
 - Sustainable income source for students
 - Increased environmental awareness
 
-
+---
 
 ##  Contact
 
@@ -432,7 +434,7 @@ This project is free for use.
 
 
 
-
+---
 <div align="center">
 
 **Made with ❤️ for a Greener Ashesi**
