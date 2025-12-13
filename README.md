@@ -47,18 +47,21 @@ Project Links
 ## About the Project
 
 The Ashesi Campus Plastic Collection Management & Reward System is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
+
 ---
  ### The Problem
- -❌ Plastic waste accumulation on campus
- -❌ Lack of recycling incentives for students
- -❌ Inefficient waste collection systems
- -❌ Poor tracking and accountability
+ ❌ Plastic waste accumulation on campus
+ ❌ Lack of recycling incentives for students
+ ❌ Inefficient waste collection systems
+ ❌ Poor tracking and accountability
+
 ---
  ### Our Solution
  -✅ Financial Rewards: Students earn **1 GHS per bottle** collected
  -✅ Real-time Tracking: Monitor collection requests and rewards
  -✅ Transparent Process: Clear visibility of the entire collection lifecycle
  -✅ User-Friendly Interface: Modern, responsive design with Ashesi's maroon branding
+
 ---
   ## Demo Credentials (sample)
 
@@ -101,6 +104,7 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
  -✅ Visualize data with interactive charts
  -✅ Manage support requests
  -✅ Process student payments
+
 ---
 
 ##  Technology Stack
@@ -122,6 +126,7 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
  **XSS Protection** - `htmlspecialchars()` for all outputs
  **Session Management** - Secure PHP sessions with role-based access
  **CSRF Protection** - Token validation for sensitive operations
+
 ---
 
 ##  System Architecture
