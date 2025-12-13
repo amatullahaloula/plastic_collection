@@ -21,41 +21,41 @@ Project Links
 
  Table of Contents
 
- [Project Links](#-about-the-project)
- [Features](#-features)
- [Technology Stack](#-technology-stack)
- [System Architecture](#-system-architecture)
- [User Roles](#-user-roles)
- [Installation](#-installation)
- [Database Schema](#-database-schema)
- [Project Structure](#-project-structure)
- [Screenshots](#-screenshots)
- [Design Features](#-design-features)
- [Security Features](#-security-features)
- [Key Metrics & Analytics](#-key-metrics--analytics)
- [Future Enhancements](#-future-enhancements)
- [Contributing](#-contributing)
- [License](#-license)
- [Acknowledgments](#-acknowledgments)
- [Contact](#-contact)
+ -[Project Links](#-about-the-project)
+ -[Features](#-features)
+ -[Technology Stack](#-technology-stack)
+ -[System Architecture](#-system-architecture)
+ -[User Roles](#-user-roles)
+ -[Installation](#-installation)
+ -[Database Schema](#-database-schema)
+ -[Project Structure](#-project-structure)
+ -[Screenshots](#-screenshots)
+ -[Design Features](#-design-features)
+ -[Security Features](#-security-features)
+ -[Key Metrics & Analytics](#-key-metrics--analytics)
+ -[Future Enhancements](#-future-enhancements)
+ -[Contributing](#-contributing)
+ -[License](#-license)
+ -[Acknowledgments](#-acknowledgments)
+ -[Contact](#-contact)
 
-
+---
 
  About the Project
 
 The Ashesi Campus Plastic Collection Management & Reward System is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
 
  The Problem
- ❌ Plastic waste accumulation on campus
- ❌ Lack of recycling incentives for students
- ❌ Inefficient waste collection systems
- ❌ Poor tracking and accountability
+ -❌ Plastic waste accumulation on campus
+ -❌ Lack of recycling incentives for students
+ -❌ Inefficient waste collection systems
+ -❌ Poor tracking and accountability
 
  Our Solution
- ✅ Financial Rewards: Students earn **1 GHS per bottle** collected
- ✅ Real-time Tracking: Monitor collection requests and rewards
- ✅ Transparent Process: Clear visibility of the entire collection lifecycle
- ✅ User-Friendly Interface: Modern, responsive design with Ashesi's maroon branding
+ -✅ Financial Rewards: Students earn **1 GHS per bottle** collected
+ -✅ Real-time Tracking: Monitor collection requests and rewards
+ -✅ Transparent Process: Clear visibility of the entire collection lifecycle
+ -✅ User-Friendly Interface: Modern, responsive design with Ashesi's maroon branding
 
 
 
@@ -78,28 +78,28 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 ## Features
 
 ###  For Students
- ✅ Submit collection requests with location and bottle count
- ✅ Real-time reward calculation (1 GHS per bottle)
- ✅ Track collection history and status
- ✅ Set up payment information (Mobile Money or Bank Transfer)
- ✅ View personal recycling statistics
- ✅ Access help center and recycling guidelines
+- ✅ Submit collection requests with location and bottle count
+ -✅ Real-time reward calculation (1 GHS per bottle)
+ -✅ Track collection history and status
+ -✅ Set up payment information (Mobile Money or Bank Transfer)
+ -✅ View personal recycling statistics
+ -✅ Access help center and recycling guidelines
 
 ###  For Cleaners
- ✅ View all pending collection requests
- ✅ Accept or reject requests
- ✅ Mark collections as completed
- ✅ Track personal performance metrics
- ✅ Real-time request updates
+ -✅ View all pending collection requests
+ -✅ Accept or reject requests
+ -✅ Mark collections as completed
+ -✅ Track personal performance metrics
+ -✅ Real-time request updates
 
 ###  For Administrators
- ✅ Comprehensive analytics dashboard
- ✅ Monitor all collection activities
- ✅ Track top-performing cleaners
- ✅ Generate revenue and collection reports
- ✅ Visualize data with interactive charts
- ✅ Manage support requests
- ✅ Process student payments
+ -✅ Comprehensive analytics dashboard
+ -✅ Monitor all collection activities
+ -✅ Track top-performing cleaners
+ -✅ Generate revenue and collection reports
+ -✅ Visualize data with interactive charts
+ -✅ Manage support requests
+ -✅ Process student payments
 
 
 
