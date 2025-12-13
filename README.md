@@ -1,4 +1,4 @@
-# 🌍 Ashesi Campus Plastic Collection Management & Reward System
+ Ashesi Campus Plastic Collection Management & Reward System
 
 Github link:
 https://github.com/amatullahaloula/plastic_collection
@@ -6,20 +6,20 @@ https://github.com/amatullahaloula/plastic_collection
 Public URL:
 
 
-**Project Links**
-- 🌐 **Live Demo**: [Here](http://169.239.251.102:341/~naima.aloula/plastic_collection/views/login.php)
-- 📂 **GitHub Repository**: [Here](https://github.com/amatullahaloula/plastic_collection)
-- 🎥 **Video Demo**:
+Project Links
+-  Live Demo: [Here](http://169.239.251.102:341/~naima.aloula/plastic_collection/views/login.php)
+-  GitHub Repository: [Here](https://github.com/amatullahaloula/plastic_collection)
+-  Video Demo:
 
 
 ---
 
-> **Transforming Plastic Waste into Student Rewards**  
+> Transforming Plastic Waste into Student Rewards  
 > A comprehensive web-based platform that incentivizes plastic bottle recycling on the Ashesi University campus through a transparent reward system.
 
 ---
 
-## 📋 Table of Contents
+ Table of Contents
 
 - [Project Links](#-about-the-project)
 - [Features](#-features)
@@ -41,17 +41,17 @@ Public URL:
 
 ---
 
-## 🎯 About the Project
+ About the Project
 
-The **Ashesi Campus Plastic Collection Management & Reward System** is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
+The Ashesi Campus Plastic Collection Management & Reward System is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
 
-### The Problem
+ The Problem
 - ❌ Plastic waste accumulation on campus
 - ❌ Lack of recycling incentives for students
 - ❌ Inefficient waste collection systems
 - ❌ Poor tracking and accountability
 
-### Our Solution
+ Our Solution
 - ✅ **Financial Rewards**: Students earn **1 GHS per bottle** collected
 - ✅ **Real-time Tracking**: Monitor collection requests and rewards
 - ✅ **Transparent Process**: Clear visibility of the entire collection lifecycle
