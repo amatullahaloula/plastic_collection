@@ -9,7 +9,7 @@ Public URL:
 **Project Links**
 - 🌐 **Live Demo**: [Here](http://169.239.251.102:341/~naima.aloula/plastic_collection/views/login.php)
 - 📂 **GitHub Repository**: [Here](https://github.com/amatullahaloula/plastic_collection)
-- 🎥 **Video Demo**:
+- 🎥 **Video Demo**: [Here] (https://youtu.be/-Gws40BauJQ)
 
 
 ---
