@@ -123,11 +123,11 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
  **Session Management** - Secure PHP sessions with role-based access
  **CSRF Protection** - Token validation for sensitive operations
 
-
+---
 
 ##  System Architecture
 
-
+```
 ┌─────────────────────────────────────────────────────────┐
 │                     Client Browser                       │
 │  (HTML/CSS/JavaScript - AJAX for dynamic content)       │
@@ -150,8 +150,8 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 │  │ payment_info, support_requests                  │    │
 │  └─────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────┘
-
-
+```
+---
 
 
 ##  User Roles
@@ -241,7 +241,7 @@ Navigate to `http://localhost/plastic_collection` in your browser.
 
 ## Project Structure
 
-
+```
 plastic_collection/
 │
 ├── api/                          # Backend API endpoints
@@ -292,7 +292,8 @@ plastic_collection/
 ├── README.md                     # This file
 └── LICENSE                       # License file
 
-
+```
+---
 
 
 ##  Design Features
