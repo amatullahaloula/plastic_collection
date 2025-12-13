@@ -21,113 +21,113 @@ Project Links
 
  Table of Contents
 
-- [Project Links](#-about-the-project)
-- [Features](#-features)
-- [Technology Stack](#-technology-stack)
-- [System Architecture](#-system-architecture)
-- [User Roles](#-user-roles)
-- [Installation](#-installation)
-- [Database Schema](#-database-schema)
-- [Project Structure](#-project-structure)
-- [Screenshots](#-screenshots)
-- [Design Features](#-design-features)
-- [Security Features](#-security-features)
-- [Key Metrics & Analytics](#-key-metrics--analytics)
-- [Future Enhancements](#-future-enhancements)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
-- [Contact](#-contact)
+ [Project Links](#-about-the-project)
+ [Features](#-features)
+ [Technology Stack](#-technology-stack)
+ [System Architecture](#-system-architecture)
+ [User Roles](#-user-roles)
+ [Installation](#-installation)
+ [Database Schema](#-database-schema)
+ [Project Structure](#-project-structure)
+ [Screenshots](#-screenshots)
+ [Design Features](#-design-features)
+ [Security Features](#-security-features)
+ [Key Metrics & Analytics](#-key-metrics--analytics)
+ [Future Enhancements](#-future-enhancements)
+ [Contributing](#-contributing)
+ [License](#-license)
+ [Acknowledgments](#-acknowledgments)
+ [Contact](#-contact)
 
----
+
 
  About the Project
 
 The Ashesi Campus Plastic Collection Management & Reward System is a final year project designed to address plastic waste management challenges on university campuses. The system provides a digital platform that connects students, cleaners, and administrators to create a seamless, incentivized recycling ecosystem.
 
  The Problem
-- ❌ Plastic waste accumulation on campus
-- ❌ Lack of recycling incentives for students
-- ❌ Inefficient waste collection systems
-- ❌ Poor tracking and accountability
+ ❌ Plastic waste accumulation on campus
+ ❌ Lack of recycling incentives for students
+ ❌ Inefficient waste collection systems
+ ❌ Poor tracking and accountability
 
  Our Solution
-- ✅ **Financial Rewards**: Students earn **1 GHS per bottle** collected
-- ✅ **Real-time Tracking**: Monitor collection requests and rewards
-- ✅ **Transparent Process**: Clear visibility of the entire collection lifecycle
-- ✅ **User-Friendly Interface**: Modern, responsive design with Ashesi's maroon branding
+ ✅ Financial Rewards: Students earn **1 GHS per bottle** collected
+ ✅ Real-time Tracking: Monitor collection requests and rewards
+ ✅ Transparent Process: Clear visibility of the entire collection lifecycle
+ ✅ User-Friendly Interface: Modern, responsive design with Ashesi's maroon branding
 
----
 
-### Demo Credentials (sample)
 
-#### Student Account
-- **Email**: `student@ashesi.edu.gh`
-- **Password**: `demo123`
+ Demo Credentials (sample)
+
+ Student Account
+**Email**: `student@ashesi.edu.gh`
+ **Password**: `demo123`
 
 #### Cleaner Account
-- **Email**: `cleaner@ashesi.edu.gh`
-- **Password**: `demo123`
+ **Email**: `cleaner@ashesi.edu.gh`
+ **Password**: `demo123`
 
 #### Admin Account
-- **Email**: `admin@ashesi.edu.gh`
-- **Password**: `admin123`
+ **Email**: `admin@ashesi.edu.gh`
+ **Password**: `admin123`
 
----
 
-## ✨ Features
 
-### 🎓 For Students
-- ✅ Submit collection requests with location and bottle count
-- ✅ Real-time reward calculation (1 GHS per bottle)
-- ✅ Track collection history and status
-- ✅ Set up payment information (Mobile Money or Bank Transfer)
-- ✅ View personal recycling statistics
-- ✅ Access help center and recycling guidelines
+## Features
 
-### 🧹 For Cleaners
-- ✅ View all pending collection requests
-- ✅ Accept or reject requests
-- ✅ Mark collections as completed
-- ✅ Track personal performance metrics
-- ✅ Real-time request updates
+###  For Students
+ ✅ Submit collection requests with location and bottle count
+ ✅ Real-time reward calculation (1 GHS per bottle)
+ ✅ Track collection history and status
+ ✅ Set up payment information (Mobile Money or Bank Transfer)
+ ✅ View personal recycling statistics
+ ✅ Access help center and recycling guidelines
 
-### 👨‍💼 For Administrators
-- ✅ Comprehensive analytics dashboard
-- ✅ Monitor all collection activities
-- ✅ Track top-performing cleaners
-- ✅ Generate revenue and collection reports
-- ✅ Visualize data with interactive charts
-- ✅ Manage support requests
-- ✅ Process student payments
+###  For Cleaners
+ ✅ View all pending collection requests
+ ✅ Accept or reject requests
+ ✅ Mark collections as completed
+ ✅ Track personal performance metrics
+ ✅ Real-time request updates
 
----
+###  For Administrators
+ ✅ Comprehensive analytics dashboard
+ ✅ Monitor all collection activities
+ ✅ Track top-performing cleaners
+ ✅ Generate revenue and collection reports
+ ✅ Visualize data with interactive charts
+ ✅ Manage support requests
+ ✅ Process student payments
 
-## 🛠️ Technology Stack
+
+
+##  Technology Stack
 
 ### Backend
-- **PHP 7.4+** - Server-side logic and API endpoints
-- **MySQL 8.0+** - Relational database management
-- **PDO** - Database abstraction layer with prepared statements
+ **PHP 7.4+** - Server-side logic and API endpoints
+**MySQL 8.0+** - Relational database management
+ **PDO** - Database abstraction layer with prepared statements
 
 ### Frontend
-- **HTML5** - Semantic markup
-- **CSS3** - Responsive styling with gradients and animations
-- **Vanilla JavaScript** - Dynamic interactions and AJAX calls
-- **Chart.js 3.9.1** - Interactive data visualizations
+ **HTML5** - Semantic markup
+ **CSS3** - Responsive styling with gradients and animations
+ **Vanilla JavaScript** - Dynamic interactions and AJAX calls
+ **Chart.js 3.9.1** - Interactive data visualizations
 
 ### Security
-- **Password Hashing** - bcrypt via `password_hash()`
-- **SQL Injection Prevention** - PDO prepared statements
-- **XSS Protection** - `htmlspecialchars()` for all outputs
-- **Session Management** - Secure PHP sessions with role-based access
-- **CSRF Protection** - Token validation for sensitive operations
+ **Password Hashing** - bcrypt via `password_hash()`
+ **SQL Injection Prevention** - PDO prepared statements
+ **XSS Protection** - `htmlspecialchars()` for all outputs
+ **Session Management** - Secure PHP sessions with role-based access
+ **CSRF Protection** - Token validation for sensitive operations
 
----
 
-## 🏗️ System Architecture
 
-```
+##  System Architecture
+
+
 ┌─────────────────────────────────────────────────────────┐
 │                     Client Browser                       │
 │  (HTML/CSS/JavaScript - AJAX for dynamic content)       │
@@ -150,11 +150,11 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 │  │ payment_info, support_requests                  │    │
 │  └─────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────┘
-```
 
----
 
-## 👥 User Roles
+
+
+##  User Roles
 
 ### 1. Student (Donor)
 **Access Level:** Limited  
@@ -183,9 +183,9 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 - Monitor cleaner performance
 - Handle support requests
 
----
 
-## 📦 Installation
+
+##  Installation
 
 ### Prerequisites
 - PHP 7.4 or higher
@@ -237,11 +237,11 @@ Navigate to `http://localhost/plastic_collection` in your browser.
 
 
 
----
 
-## 📁 Project Structure
 
-```
+## Project Structure
+
+
 plastic_collection/
 │
 ├── api/                          # Backend API endpoints
@@ -291,11 +291,11 @@ plastic_collection/
 ├── .htaccess                     # Apache configuration
 ├── README.md                     # This file
 └── LICENSE                       # License file
-```
 
----
 
-## 🎨 Design Features
+
+
+##  Design Features
 
 ### Color Scheme
 - **Primary**: Maroon (#800020) - Ashesi University brand color
@@ -304,16 +304,16 @@ plastic_collection/
 - **Accent Orange**: (#f59e0b) - For pending states
 
 ### UI/UX Highlights
-- ✨ Smooth gradient backgrounds
-- 🎯 Hover effects and transitions
-- 📊 Interactive data visualizations
-- 📱 Fully responsive mobile design
-- ♿ Accessible contrast ratios
-- 🚀 Fast loading times
+-  Smooth gradient backgrounds
+-  Hover effects and transitions
+-  Interactive data visualizations
+-  Fully responsive mobile design
+-  Accessible contrast ratios
+-  Fast loading times
 
 ---
 
-## 🔒 Security Features
+##  Security Features
 
 ### 1. Authentication
 - Secure session management
@@ -336,35 +336,35 @@ plastic_collection/
 
 ---
 
-## 📊 Key Metrics & Analytics
+##  Key Metrics & Analytics
 
 The system tracks and displays:
-- 💰 **Total Revenue Generated** (GH₵)
-- ♻️ **Total Bottles Collected**
-- ✅ **Completed Requests**
-- 📊 **Average Bottles per Request**
-- 🏆 **Top Performing Cleaners**
-- 📈 **Monthly Collection Trends**
-- 📊 **Request Status Distribution**
+- **Total Revenue Generated** (GH₵)
+-  **Total Bottles Collected**
+- **Completed Requests**
+-  **Average Bottles per Request**
+-  **Top Performing Cleaners**
+-  **Monthly Collection Trends**
+-  **Request Status Distribution**
 
----
 
-## 🚀 Future Enhancements
 
-- [ ] Mobile app (iOS/Android)
-- [ ] QR code scanning for bottle verification
-- [ ] Gamification with badges and levels
-- [ ] Integration with other recyclables (cans, paper)
-- [ ] Push notifications for collection updates
-- [ ] Payment gateway integration (automated payouts)
-- [ ] Multi-campus expansion
-- [ ] Carbon footprint calculator
-- [ ] Leaderboard system
-- [ ] SMS notifications
+##  Future Enhancements
 
----
+-  Mobile app (iOS/Android)
+-  QR code scanning for bottle verification
+   amification with badges and levels
+-  Integration with other recyclables (cans, paper)
+-  Push notifications for collection updates
+-  Payment gateway integration (automated payouts)
+-  Multi-campus expansion
+-  Carbon footprint calculator
+-  Leaderboard system
+-  SMS notifications
 
-## 🤝 Contributing
+
+
+##  Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -380,24 +380,24 @@ Contributions are welcome! Please follow these steps:
 - Comment complex logic
 - Write descriptive commit messages
 
----
 
-## 📝 License
+
+##  License
 
 This project is free for use.
 
----
 
-## 🙏 Acknowledgments
+
+##  Acknowledgments
 
 - **Ashesi University** - For providing the opportunity and resources
 - **Faculty Advisors** - For guidance and mentorship
 - **Cleaners and Students** - For participating in user testing
 - **Open Source Community** - For the amazing tools and libraries
 
----
 
-## 📈 Project Statistics
+
+##  Project Statistics
 
 - **Lines of Code**: ~5,000+
 - **Development Time**: 7 days (rapid development)
@@ -407,9 +407,9 @@ This project is free for use.
 - **User Roles**: 3 distinct roles
 - **API Endpoints**: 8+ endpoints
 
----
 
-## 🌍 Environmental Impact
+
+## Environmental Impact
 
 **Estimated Impact:**
 - 70% reduction in campus plastic waste
@@ -418,9 +418,9 @@ This project is free for use.
 - Sustainable income source for students
 - Increased environmental awareness
 
----
 
-## 📞 Contact
+
+##  Contact
 
 **Project Developer**
 - **Name**: Amatullah Aloula
@@ -430,7 +430,7 @@ This project is free for use.
 
 
 
----
+
 
 <div align="center">
 
