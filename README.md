@@ -24,6 +24,7 @@ Public URL:
 
 - [About the Project](#-about-the-project)
 - [Live Demo](#-live-demo)
+- [AI use policy](#-ai-use)
 - [Features](#-features)
 - [Technology Stack](#-technology-stack)
 - [System Architecture](#-system-architecture)
@@ -79,6 +80,15 @@ The Ashesi Campus Plastic Collection Management & Reward System is a final year 
 
 
 ---
+## AI Use
+1) Tool name & provider: Claude AI
+2) Version: Free version
+3) Date(s) of use: 10th December, 11th December
+4) Precise prompts: Chnage the theme to a maroon theme, It says network error HTTP 500, help me fix it
+5) Extent of use: 30%. Used mainly to debug code and improve UI. Helpful in organizing composer for testing
+6) Source code: Most CSS codes. composer set up codes
+
+
 ## Features
 
 ###  For Students
